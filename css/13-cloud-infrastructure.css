@@ -1,0 +1,514 @@
+/* ==================================================
+   File : 13-cloud-infrastructure.css
+   Purpose : Cloud Infrastructure Visualization
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   CLOUD INFRASTRUCTURE
+   ================================================== */
+
+.cloud-infrastructure {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 1.5rem auto 0;
+    padding: 1.4rem;
+
+    background: rgba(2, 7, 3, 0.88);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 102, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-infrastructure:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.cloud-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cloud-label {
+    display: block;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+
+    letter-spacing: 1px;
+}
+
+.cloud-subtitle {
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(107, 142, 107, 0.7);
+
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+
+    letter-spacing: 0.5px;
+}
+
+.cloud-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+
+    letter-spacing: 0.5px;
+}
+
+.cloud-status-dot {
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--accent-green);
+
+    animation:
+        cloudStatusPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes cloudStatusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+}
+
+
+/* ==================================================
+   CLOUD FLOW
+   ================================================== */
+
+.cloud-flow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 5px 2px 15px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--border-color)
+        transparent;
+}
+
+.cloud-flow::-webkit-scrollbar {
+    height: 4px;
+}
+
+.cloud-flow::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cloud-flow::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   CLOUD NODE
+   ================================================== */
+
+.cloud-node {
+    position: relative;
+
+    flex: 0 0 130px;
+
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 12px 8px;
+
+    background: rgba(0, 255, 102, 0.025);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    font-family: var(--font-mono);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-node:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--accent-green);
+
+    background: rgba(0, 255, 102, 0.06);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(0, 255, 102, 0.08);
+}
+
+
+/* ==================================================
+   NODE NUMBER
+   ================================================== */
+
+.cloud-node-number {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 255, 102, 0.25);
+
+    border-radius: 50%;
+
+    color: var(--accent-green);
+
+    font-size: 0.6rem;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cloud-node:hover .cloud-node-number {
+    background: rgba(0, 255, 102, 0.1);
+
+    box-shadow:
+        0 0 12px rgba(0, 255, 102, 0.25);
+}
+
+
+/* ==================================================
+   NODE NAME
+   ================================================== */
+
+.cloud-node-name {
+    color: var(--text-main);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   NODE DESCRIPTION
+   ================================================== */
+
+.cloud-node-desc {
+    color: var(--text-muted);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.4px;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   DATA CONNECTOR
+   ================================================== */
+
+.cloud-connector {
+    position: relative;
+
+    flex: 0 0 35px;
+
+    height: 2px;
+
+    background:
+        rgba(0, 255, 102, 0.12);
+}
+
+.cloud-connector span {
+    position: absolute;
+
+    top: 50%;
+    left: -5px;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translateY(-50%);
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--accent-green);
+
+    animation:
+        cloudDataFlow 2.2s linear infinite;
+}
+
+@keyframes cloudDataFlow {
+
+    0% {
+        left: -5px;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% + 5px);
+        opacity: 0;
+    }
+
+}
+
+
+/* ==================================================
+   STAGGERED DATA FLOW
+   ================================================== */
+
+.cloud-connector:nth-of-type(2) span {
+    animation-delay: 0.35s;
+}
+
+.cloud-connector:nth-of-type(4) span {
+    animation-delay: 0.7s;
+}
+
+.cloud-connector:nth-of-type(6) span {
+    animation-delay: 1.05s;
+}
+
+.cloud-connector:nth-of-type(8) span {
+    animation-delay: 1.4s;
+}
+
+.cloud-connector:nth-of-type(10) span {
+    animation-delay: 1.75s;
+}
+
+
+/* ==================================================
+   FINAL CLOUD NODE
+   ================================================== */
+
+.cloud-node-final {
+    border-color:
+        rgba(0, 255, 102, 0.25);
+
+    animation:
+        cloudFinalGlow 3s ease-in-out infinite;
+}
+
+@keyframes cloudFinalGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(0, 255, 102, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(0, 255, 102, 0.12);
+    }
+
+}
+
+
+/* ==================================================
+   SECURITY BAR
+   ================================================== */
+
+.cloud-security-bar {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.62rem;
+}
+
+.cloud-security-item {
+    color: var(--accent-green);
+
+    padding: 5px 8px;
+
+    border: 1px solid
+        rgba(0, 255, 102, 0.12);
+
+    border-radius: 4px;
+
+    background:
+        rgba(0, 255, 102, 0.02);
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .cloud-infrastructure {
+        max-width: 100%;
+    }
+
+    .cloud-flow {
+        justify-content: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cloud-infrastructure {
+        padding: 1rem;
+
+        border-radius: 6px;
+    }
+
+    .cloud-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .cloud-label {
+        font-size: 0.7rem;
+    }
+
+    .cloud-subtitle {
+        font-size: 0.52rem;
+    }
+
+    .cloud-status {
+        font-size: 0.58rem;
+    }
+
+    .cloud-node {
+        flex-basis: 105px;
+
+        min-height: 90px;
+    }
+
+    .cloud-node-number {
+        width: 26px;
+        height: 26px;
+
+        font-size: 0.55rem;
+    }
+
+    .cloud-node-name {
+        font-size: 0.62rem;
+    }
+
+    .cloud-node-desc {
+        font-size: 0.5rem;
+    }
+
+    .cloud-connector {
+        flex-basis: 25px;
+    }
+
+    .cloud-security-bar {
+        gap: 7px;
+
+        font-size: 0.55rem;
+    }
+
+}
