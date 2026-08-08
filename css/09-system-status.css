@@ -1,0 +1,265 @@
+/* ==================================================
+   File : 09-system-status.css
+   Purpose : Live DevSecOps System Status
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   SYSTEM STATUS
+   ================================================== */
+
+.system-status {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 1.5rem auto 0;
+
+    background: rgba(2, 7, 3, 0.88);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    padding: 1.4rem;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 102, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.system-status:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   STATUS HEADER
+   ================================================== */
+
+.system-status-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 0.9rem;
+    margin-bottom: 1rem;
+
+    border-bottom: 1px solid var(--border-color);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+
+    color: var(--text-muted);
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   ONLINE INDICATOR
+   ================================================== */
+
+.status-online {
+    color: var(--accent-green);
+
+    font-size: 0.68rem;
+
+    animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+
+}
+
+
+/* ==================================================
+   STATUS LIST
+   ================================================== */
+
+.status-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(180px, 1fr));
+
+    gap: 12px;
+}
+
+
+/* ==================================================
+   STATUS ITEM
+   ================================================== */
+
+.status-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 11px 13px;
+
+    background: rgba(0, 255, 102, 0.025);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 5px;
+
+    font-family: var(--font-mono);
+
+    opacity: 0.25;
+
+    transform: translateY(5px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* ==================================================
+   ACTIVE STATUS
+   ================================================== */
+
+.status-item.status-active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.status-item:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    background: rgba(0, 255, 102, 0.05);
+}
+
+
+/* ==================================================
+   STATUS NAME
+   ================================================== */
+
+.status-name {
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.5px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   STATUS VALUE
+   ================================================== */
+
+.status-value {
+    color: var(--accent-green);
+
+    font-size: 0.66rem;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   STATUS DOT
+   ================================================== */
+
+.status-value::before {
+    content: "●";
+
+    margin-right: 5px;
+
+    font-size: 0.45rem;
+
+    color: var(--accent-green);
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .system-status {
+        max-width: 100%;
+    }
+
+    .status-list {
+        grid-template-columns:
+            repeat(2, minmax(180px, 1fr));
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .system-status {
+        margin-top: 1.2rem;
+
+        padding: 1rem;
+
+        border-radius: 6px;
+    }
+
+    .system-status-header {
+        font-size: 0.72rem;
+    }
+
+    .status-list {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .status-item {
+        padding: 10px 12px;
+    }
+
+    .status-name {
+        font-size: 0.66rem;
+    }
+
+    .status-value {
+        font-size: 0.62rem;
+    }
+
+}

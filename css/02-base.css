@@ -1,0 +1,68 @@
+/*==================================================
+  File : 02-base.css
+  Purpose : Base Styles & Global Helpers
+  Author : Faizan Sayyad
+==================================================*/
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    /* Removed the static grid background since we now have the live canvas */
+}
+
+/* ==========================================
+   LIVE MATRIX BACKGROUND
+========================================== */
+
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================
+   TYPOGRAPHY HELPERS
+========================================== */
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.text-green {
+    color: var(--accent-green);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}

@@ -1,0 +1,45 @@
+/*==================================================
+  File : 01-variables.css
+  Purpose : Global Variables
+  Author : Faizan Sayyad
+==================================================*/
+
+:root {
+
+    /* ==========================
+       Background Colors
+    ========================== */
+
+    --bg-color: #030703;
+    --bg-card: rgba(8, 16, 8, 0.85);
+    --bg-card-hover: #0d1a0d;
+
+    /* ==========================
+       Borders
+    ========================== */
+
+    --border-color: #122912;
+    --border-glow: #00ff66;
+
+    /* ==========================
+       Accent Colors
+    ========================== */
+
+    --accent-green: #00ff66;
+    --accent-dim: #00b347;
+
+    /* ==========================
+       Text Colors
+    ========================== */
+
+    --text-main: #e2f0e2;
+    --text-muted: #6b8e6b;
+
+    /* ==========================
+       Fonts
+    ========================== */
+
+    --font-mono: "Fira Code", monospace;
+    --font-sans: "Inter", sans-serif;
+
+}

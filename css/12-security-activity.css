@@ -1,0 +1,314 @@
+/* ==================================================
+   File : 12-security-activity.css
+   Purpose : Live Security Activity Feed
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   ACTIVITY CONTAINER
+   ================================================== */
+
+.security-activity {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 1.5rem auto 0;
+
+    padding: 1.4rem;
+
+    background: rgba(2, 7, 3, 0.88);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 102, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-activity:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   ACTIVITY HEADER
+   ================================================== */
+
+.activity-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    border-bottom: 1px solid var(--border-color);
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+
+    letter-spacing: 1px;
+}
+
+.activity-live {
+    color: var(--accent-green);
+
+    font-size: 0.65rem;
+
+    animation:
+        activityPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes activityPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+
+}
+
+
+/* ==================================================
+   ACTIVITY FEED
+   ================================================== */
+
+.activity-feed {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    max-height: 240px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--border-color)
+        transparent;
+}
+
+.activity-feed::-webkit-scrollbar {
+    width: 4px;
+}
+
+.activity-feed::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.activity-feed::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   ACTIVITY ITEM
+   ================================================== */
+
+.activity-item {
+    display: grid;
+
+    grid-template-columns:
+        70px 20px 1fr;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 36px;
+
+    padding: 8px 10px;
+
+    background: rgba(0, 255, 102, 0.02);
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    font-family: var(--font-mono);
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    animation:
+        activityAppear 0.45s ease forwards;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.activity-item:hover {
+    background: rgba(0, 255, 102, 0.045);
+
+    border-color:
+        rgba(0, 255, 102, 0.12);
+}
+
+@keyframes activityAppear {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   ACTIVITY TIME
+   ================================================== */
+
+.activity-time {
+    color: var(--text-muted);
+
+    font-size: 0.58rem;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   ACTIVITY STATUS
+   ================================================== */
+
+.activity-status {
+    color: var(--accent-green);
+
+    font-size: 0.72rem;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 8px rgba(0, 255, 102, 0.35);
+}
+
+
+/* ==================================================
+   ACTIVITY MESSAGE
+   ================================================== */
+
+.activity-message {
+    min-width: 0;
+
+    color: var(--text-main);
+
+    font-size: 0.65rem;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ==================================================
+   WARNING EVENT
+   ================================================== */
+
+.activity-item.warning {
+    background:
+        rgba(255, 190, 0, 0.025);
+}
+
+.activity-item.warning .activity-status {
+    color: #d8b84c;
+
+    text-shadow:
+        0 0 8px rgba(216, 184, 76, 0.3);
+}
+
+
+/* ==================================================
+   SUCCESS EVENT
+   ================================================== */
+
+.activity-item.success .activity-status {
+    color: var(--accent-green);
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .security-activity {
+        max-width: 100%;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .security-activity {
+        padding: 1rem;
+
+        border-radius: 6px;
+    }
+
+    .activity-header {
+        font-size: 0.7rem;
+    }
+
+    .activity-live {
+        font-size: 0.58rem;
+    }
+
+    .activity-item {
+        grid-template-columns:
+            58px 18px 1fr;
+
+        gap: 6px;
+
+        padding: 7px 8px;
+    }
+
+    .activity-time {
+        font-size: 0.52rem;
+    }
+
+    .activity-status {
+        font-size: 0.65rem;
+    }
+
+    .activity-message {
+        font-size: 0.58rem;
+    }
+
+}

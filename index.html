@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAIZAN SAYYAD | DevSecOps Engineer</title>
+
+
+    <!-- =========================================
+         FONTS
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS FILES
+    ========================================== -->
+
+    <link rel="stylesheet" href="css/01-variables.css">
+    <link rel="stylesheet" href="css/02-base.css">
+    <link rel="stylesheet" href="css/03-header.css">
+    <link rel="stylesheet" href="css/04-hero.css">
+    <link rel="stylesheet" href="css/05-about.css">
+    <link rel="stylesheet" href="css/06-skills.css">
+    <link rel="stylesheet" href="css/07-experience.css">
+    <link rel="stylesheet" href="css/08-terminal.css">
+    <link rel="stylesheet" href="css/08-projects.css">
+    <link rel="stylesheet" href="css/09-contact.css">
+    <link rel="stylesheet" href="css/09-system-status.css">
+    <link rel="stylesheet" href="css/10-footer.css">
+    <link rel="stylesheet" href="css/10-devops-pipeline.css">
+    <link rel="stylesheet" href="css/11-responsive.css">
+    <link rel="stylesheet" href="css/11-security-monitor.css">
+    <link rel="stylesheet" href="css/12-security-activity.css">
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/01-contact-form.js" defer></script>
+    <script src="js/02-matrix.js" defer></script>
+    <script src="js/03-animations.js" defer></script>
+    <script src="js/04-typing.js" defer></script>
+    <script src="js/05-projects.js" defer></script>
+    <script src="js/06-main.js" defer></script>
+    <script src="js/07-terminal.js" defer></script>
+    <script src="js/08-system-status.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         MATRIX BACKGROUND
+    ========================================== -->
+
+    <canvas id="matrix-bg"></canvas>
+
+
+    <!-- =========================================
+         HEADER / NAVIGATION
+    ========================================== -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <!-- Logo -->
+                <a href="#hero" class="logo">
+                    <span class="logo-dot"></span>
+                    Faizan Sayyad
+                </a>
+
+
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#hero">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Resume Button -->
+                <a href="#" class="btn-outline">
+                    Resume
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+
+    <section id="hero">
+        <div class="container">
+            <div class="status-badge">
+                <span class="pulse"></span> AVAILABLE FOR OPPORTUNITIES • PUNE, INDIA
+            </div>
+            
+            <h1 class="hero-title">
+                FAIZAN
+                <span>SAYYAD</span>
+            </h1>
+
+            <h2 class="hero-subtitle">DevSecOps Engineer</h2>
+
+            <p class="hero-bio">
+                Cloud & DevOps Intern with hands-on experience across AWS, Linux, Docker, Kubernetes, Terraform, Jenkins and CI/CD. Skilled in Python & Bash automation with a strong cybersecurity foundation (VAPT, OWASP Top 10) — engineering the path from infrastructure into Cloud Security and DevSecOps.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn-solid">INITIATE CONTACT &rarr;</a>
+                <a href="#work" class="btn-outline">DOWNLOAD RESUME</a>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num">5+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">Security Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">DevOps Tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">24/7</div>
+                    <div class="stat-label">Learning Mode</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ticker-bar">
+            <div class="ticker-content">
+                // SECURE // DEPLOY // AUTOMATE // SCALE // SECURE // DEPLOY // AUTOMATE // SCALE // SECURE // DEPLOY // AUTOMATE // SCALE //
+            </div>
+        </div>
+    </section>
+    <!-- =========================================
+     END HERO SECTION
+========================================= -->
+
+
+
+    <!-- =========================================
+     ABOUT SECTION
+========================================= -->
+
+    <section id="about">
+        <div class="container">
+            <span class="section-tag">01 // SYSTEM_MANIFESTO</span>
+            <h2 class="section-heading">BUILDING INFRASTRUCTURE THAT IS SECURE, AUTOMATED AND IMPOSSIBLE TO IGNORE.</h2>
+
+            <div class="cards-3">
+                <div class="card">
+                    <div class="card-num">01</div>
+                    <div class="card-header">// SYSTEM_INIT</div>
+                    <h3 class="card-title">Secure by default, not by patch.</h3>
+                    <p class="card-text">I treat security as a first-class citizen of the pipeline — shifting left so that vulnerabilities are caught in code review and CI, never in production incident reports.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">02</div>
+                    <div class="card-header">// AUTOMATE_EVERYTHING</div>
+                    <h3 class="card-title">If it runs twice, it gets scripted.</h3>
+                    <p class="card-text">From provisioning cloud infrastructure with Terraform to hardening Linux boxes with Bash, I automate the repeatable so humans can focus on the exceptional.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">03</div>
+                    <div class="card-header">// SHIP_WITH_CONFIDENCE</div>
+                    <h3 class="card-title">Pipelines that fail loud and deploy quiet.</h3>
+                    <p class="card-text">CI/CD with Jenkins and GitHub Actions, containerized with Docker, orchestrated on Kubernetes — reproducible builds that turn every commit into a trustworthy release.</p>
+                </div>
+            </div>
+
+            <div class="whoami-bar">
+                <span class="text-green">$ whoami</span> • Cloud & DevOps Intern | Aspiring Cloud Security Engineer
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     END ABOUT SECTION
+========================================= -->
+<!-- =========================================
+     INTERACTIVE DEVOPS TERMINAL
+========================================= -->
+
+<div class="dev-terminal" id="dev-terminal">
+
+    <div class="terminal-topbar">
+        <div class="terminal-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="terminal-title">
+            faizan@devsecops:~
+        </div>
+    </div>
+
+    <div class="terminal-output">
+        <div class="terminal-welcome">
+            <span class="terminal-green">
+                Welcome to Faizan's DevSecOps Terminal
+            </span>
+
+            <br>
+
+            Type
+            <span class="terminal-command">help</span>
+            to see available commands.
+        </div>
+    </div>
+
+    <div class="terminal-input-row">
+
+        <span class="terminal-prompt">
+            faizan@devsecops:~$
+        </span>
+
+        <input
+            type="text"
+            class="terminal-input"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="type a command..."
+        >
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     LIVE SYSTEM STATUS
+========================================= -->
+
+<div class="system-status" id="system-status">
+
+    <div class="system-status-header">
+        <span>SYS_STATUS</span>
+        <span class="status-online">● ONLINE</span>
+    </div>
+
+    <div class="status-list">
+
+        <div class="status-item">
+            <span class="status-name">LINUX</span>
+            <span class="status-value">ONLINE</span>
+        </div>
+
+        <div class="status-item">
+            <span class="status-name">AWS</span>
+            <span class="status-value">CONNECTED</span>
+        </div>
+
+        <div class="status-item">
+            <span class="status-name">DOCKER</span>
+            <span class="status-value">RUNNING</span>
+        </div>
+
+        <div class="status-item">
+            <span class="status-name">KUBERNETES</span>
+            <span class="status-value">READY</span>
+        </div>
+
+        <div class="status-item">
+            <span class="status-name">CI/CD</span>
+            <span class="status-value">ACTIVE</span>
+        </div>
+
+        <div class="status-item">
+            <span class="status-name">SECURITY</span>
+            <span class="status-value">ENABLED</span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     DEVOPS PIPELINE
+========================================= -->
+
+<div class="devops-pipeline">
+
+    <div class="pipeline-header">
+        <span>DEPLOYMENT_PIPELINE</span>
+        <span class="pipeline-status">● ACTIVE</span>
+    </div>
+
+    <div class="pipeline-flow">
+
+        <div class="pipeline-stage">
+            <div class="pipeline-icon">01</div>
+            <div class="pipeline-name">CODE</div>
+            <div class="pipeline-desc">SOURCE</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage">
+            <div class="pipeline-icon">02</div>
+            <div class="pipeline-name">GIT</div>
+            <div class="pipeline-desc">VERSION</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage">
+            <div class="pipeline-icon">03</div>
+            <div class="pipeline-name">BUILD</div>
+            <div class="pipeline-desc">COMPILE</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage">
+            <div class="pipeline-icon">04</div>
+            <div class="pipeline-name">TEST</div>
+            <div class="pipeline-desc">VALIDATE</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage security-stage">
+            <div class="pipeline-icon">05</div>
+            <div class="pipeline-name">SECURITY</div>
+            <div class="pipeline-desc">SCAN</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage">
+            <div class="pipeline-icon">06</div>
+            <div class="pipeline-name">DOCKER</div>
+            <div class="pipeline-desc">CONTAINER</div>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+
+        <div class="pipeline-stage deploy-stage">
+            <div class="pipeline-icon">07</div>
+            <div class="pipeline-name">DEPLOY</div>
+            <div class="pipeline-desc">CLOUD</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     SECURITY THREAT MONITOR
+========================================= -->
+
+<div class="security-monitor" id="security-monitor">
+
+    <div class="security-header">
+        <div>
+            <span class="security-label">SECURITY_MONITOR</span>
+            <span class="security-subtitle">REAL-TIME PROTECTION</span>
+        </div>
+
+        <div class="security-status">
+            <span class="security-status-dot"></span>
+            PROTECTED
+        </div>
+    </div>
+
+
+    <div class="security-grid">
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">01</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                FIREWALL
+            </div>
+
+            <div class="security-value">
+                ACTIVE
+            </div>
+        </div>
+
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">02</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                THREAT DETECTION
+            </div>
+
+            <div class="security-value">
+                ACTIVE
+            </div>
+        </div>
+
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">03</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                SSL / TLS
+            </div>
+
+            <div class="security-value">
+                SECURED
+            </div>
+        </div>
+
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">04</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                VULNERABILITY SCAN
+            </div>
+
+            <div class="security-value">
+                CLEAN
+            </div>
+        </div>
+
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">05</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                AUTHENTICATION
+            </div>
+
+            <div class="security-value">
+                SECURED
+            </div>
+        </div>
+
+
+        <div class="security-item">
+            <div class="security-item-top">
+                <span class="security-icon">06</span>
+                <span class="security-check">✓</span>
+            </div>
+
+            <div class="security-name">
+                INTRUSION DETECTION
+            </div>
+
+            <div class="security-value">
+                MONITORING
+            </div>
+        </div>
+
+    </div>
+
+    <!-- =========================================
+     LIVE SECURITY METRICS
+========================================= -->
+
+<div class="security-metrics">
+
+    <div class="security-metric">
+
+        <span class="metric-label">
+            THREATS_DETECTED
+        </span>
+
+        <span
+            class="metric-value"
+            id="threat-counter"
+        >
+            0
+        </span>
+
+        <span class="metric-unit">
+            EVENTS
+        </span>
+
+        <div class="live-indicator">
+            LIVE MONITORING
+        </div>
+
+    </div>
+
+
+    <div class="security-metric">
+
+        <span class="metric-label">
+            SECURITY_SCORE
+        </span>
+
+        <span
+            class="metric-value"
+            id="security-score-value"
+        >
+            0
+        </span>
+
+        <span class="metric-unit">
+            / 100
+        </span>
+
+        <div class="security-score">
+            <div
+                class="security-score-bar"
+                id="security-score-bar"
+            ></div>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- =========================================
+     LIVE SECURITY ACTIVITY
+========================================= -->
+
+<div class="security-activity">
+
+    <div class="activity-header">
+        <span>LIVE_SECURITY_ACTIVITY</span>
+
+        <span class="activity-live">
+            ● STREAMING
+        </span>
+    </div>
+
+    <div
+        class="activity-feed"
+        id="security-activity-feed"
+    >
+
+        <div class="activity-item">
+            <span class="activity-time">
+                --:--:--
+            </span>
+
+            <span class="activity-status">
+                ✓
+            </span>
+
+            <span class="activity-message">
+                Security monitoring initialized
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- =========================================
+     SKILLS SECTION
+========================================= -->
+
+    <section id="skills">
+        <div class="container">
+            <span class="section-tag">02 // STACK_&_TOOLING</span>
+            <h2 class="section-heading">THE ARSENAL</h2>
+
+            <div class="skill-group">
+                <div class="skill-header">
+                    <span class="skill-title">// CLOUD_&_DEVOPS</span>
+                    <span class="skill-count">12 MODULES</span>
+                </div>
+                <div class="badges">
+                    <span class="badge">AWS - EC2</span>
+                    <span class="badge">AWS - IAM</span>
+                    <span class="badge">AWS - S3</span>
+                    <span class="badge">AWS - VPC</span>
+                    <span class="badge">Docker</span>
+                    <span class="badge">Kubernetes</span>
+                    <span class="badge">Terraform</span>
+                    <span class="badge">Jenkins</span>
+                    <span class="badge">GitHub Actions</span>
+                    <span class="badge">CI/CD</span>
+                    <span class="badge">IaC</span>
+                    <span class="badge">Git</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-header">
+                    <span class="skill-title">// LINUX_&_SYSTEMS</span>
+                    <span class="skill-count">6 MODULES</span>
+                </div>
+                <div class="badges">
+                    <span class="badge">Ubuntu</span>
+                    <span class="badge">CentOS</span>
+                    <span class="badge">Kali Linux</span>
+                    <span class="badge">Bash Scripting</span>
+                    <span class="badge">Net Diagnostics</span>
+                    <span class="badge">Monitoring</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-header">
+                    <span class="skill-title">// SECURITY</span>
+                    <span class="skill-count">5 MODULES</span>
+                </div>
+                <div class="badges">
+                    <span class="badge">VAPT</span>
+                    <span class="badge">OWASP Top 10</span>
+                    <span class="badge">Threat Analysis</span>
+                    <span class="badge">SHA-256</span>
+                    <span class="badge">Risk Scoring</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-header">
+                    <span class="skill-title">// PROGRAMMING</span>
+                    <span class="skill-count">4 MODULES</span>
+                </div>
+                <div class="badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">SQL</span>
+                    <span class="badge">C</span>
+                    <span class="badge">C++</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     END SKILLS SECTION
+========================================= -->
+
+    <!-- Section 03: Experience & Education -->
+    <section id="work">
+        <div class="container">
+            <span class="section-tag">03 // RUNTIME_LOG</span>
+            <h2 class="section-heading">EXPERIENCE & EDUCATION</h2>
+
+            <div class="dual-grid">
+                <!-- Left: Experience -->
+                <div>
+                    <div class="exp-item">
+                        <div class="exp-date">
+                            FEB 2026 - PRESENT <span class="live-tag">LIVE</span>
+                        </div>
+                        <h3 class="exp-role">Cloud & DevOps Intern</h3>
+                        <div class="exp-company">IT Roots Pvt. Ltd.</div>
+                        <ul class="exp-bullets">
+                            <li>Administer and troubleshoot Linux environments (Ubuntu, CentOS, Kali) supporting dev & deployment workflows.</li>
+                            <li>Deploy and manage AWS Infrastructure (EC2, IAM, S3, VPC) through hands-on labs and projects.</li>
+                            <li>Build and manage Docker containers for application packaging and deployment.</li>
+                            <li>Provision cloud resources as Infrastructure as Code using Terraform.</li>
+                            <li>Implement CI/CD pipelines with Jenkins, Git and GitHub Actions.</li>
+                            <li>Deploy and orchestrate containerized applications using Kubernetes.</li>
+                            <li>Automate operational tasks with Bash and Python scripting.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-date">2022 - 2025</div>
+                        <h3 class="exp-role">B.Sc. Computer Science</h3>
+                        <div class="exp-company">R.B. Narayanrao Borawake College — SPPU</div>
+                        <p class="text-muted" style="font-size: 0.9rem;">Bachelor of Science in Computer Science, Savitribai Phule Pune University. Foundations in systems, networking, databases, and programming.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Certifications -->
+                <div>
+                    <span class="section-tag" style="margin-bottom: 1.5rem;">// CERTIFICATIONS.verified</span>
+
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-title">Mastercard Cybersecurity Virtual Experience</div>
+                            <div class="cert-desc">Forage — Security Awareness analyst, phishing threat reporting.</div>
+                        </div>
+                        <div class="cert-date">JUL 2024</div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-title">Deloitte Australia Cyber Job Simulation</div>
+                            <div class="cert-desc">Forage — Activity-log review & simulated breach investigation.</div>
+                        </div>
+                        <div class="cert-date">JUL 2024</div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-title">IoT - Network Specialist Programme</div>
+                            <div class="cert-desc">Reliance Foundation — Networking, connected devices & protocols.</div>
+                        </div>
+                        <div class="cert-date">JUN 2024</div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-title">Cybersecurity</div>
+                            <div class="cert-desc">Tech Mahindra Foundation — Skill India Digital Hub.</div>
+                        </div>
+                        <div class="cert-date">JUN 2024</div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <div class="cert-title">Cyber Security Basics</div>
+                            <div class="cert-desc">Cybrary — Threat awareness & risk management.</div>
+                        </div>
+                        <div class="cert-date">MAY 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     PROJECTS SECTION
+========================================= -->
+
+    <section id="projects">
+        <div class="container">
+            <span class="section-tag">04 // DEPLOYED_ARTIFACTS</span>
+            <h2 class="section-heading">SELECTED WORK</h2>
+
+            <div class="cards-3">
+                <div class="project-card">
+                    <div class="project-top">
+                        <span>01</span>
+                        <span>2 MONTHS</span>
+                    </div>
+                    <h3 class="project-title">Password Security Lab</h3>
+                    <p class="project-desc">Interactive cybersecurity web app demonstrating secure authentication. Implemented SHA-256 hashing, multi-parameter strength analysis, and entropy calculation to estimate resistance to guessing attacks — with real-time recommendations.</p>
+                    <div class="badges">
+                        <span class="badge">SHA-256</span>
+                        <span class="badge">Entropy</span>
+                        <span class="badge">Auth</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">Flask</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-top">
+                        <span>02</span>
+                        <span>1 MONTH</span>
+                    </div>
+                    <h3 class="project-title">Phishing URL Detector &nearr;</h3>
+                    <p class="project-desc">Web-based phishing detection system analyzing URLs for security risk. HTTPS validation, suspicious keyword detection, and structural pattern analysis feed a risk-scoring engine classifying URLs into Low / Medium / High risk tiers.</p>
+                    <div class="badges">
+                        <span class="badge">Risk Scoring</span>
+                        <span class="badge">URL Analysis</span>
+                        <span class="badge">Detection</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">Flask</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     END PROJECTS SECTION
+========================================= -->
+
+    <!-- Section 05: Notes / Articles -->
+    <section>
+        <div class="container">
+            <span class="section-tag">05 // FIELD_NOTES.LOG</span>
+            <h2 class="section-heading">NOTES FROM THE TERMINAL</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="cert-card" style="padding: 1.5rem;">
+                    <div>
+                        <span class="text-muted font-mono" style="margin-right: 15px;">2026.02</span>
+                        <strong style="font-size: 1.1rem;">Shifting Left: catching CVEs before merge</strong>
+                    </div>
+                    <div class="badges">
+                        <span class="badge">DEVSECOPS</span>
+                        <span class="text-muted font-mono" style="font-size: 0.8rem;">4 min</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" style="padding: 1.5rem;">
+                    <div>
+                        <span class="text-muted font-mono" style="margin-right: 15px;">2026.01</span>
+                        <strong style="font-size: 1.1rem;">Immutable infra with Terraform & remote state</strong>
+                    </div>
+                    <div class="badges">
+                        <span class="badge">IAC</span>
+                        <span class="text-muted font-mono" style="font-size: 0.8rem;">6 min</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" style="padding: 1.5rem;">
+                    <div>
+                        <span class="text-muted font-mono" style="margin-right: 15px;">2025.12</span>
+                        <strong style="font-size: 1.1rem;">Hardening Docker images: distroless & scanning</strong>
+                    </div>
+                    <div class="badges">
+                        <span class="badge">CONTAINERS</span>
+                        <span class="text-muted font-mono" style="font-size: 0.8rem;">5 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+     CONTACT SECTION
+========================================= -->
+
+    <section id="contact">
+        <div class="container">
+            <span class="section-tag">06 // OPEN_CHANNEL</span>
+            <h2 class="section-heading">LET'S BUILD SOMETHING SECURE.</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="text-muted">
+                        Open to internships, junior DevOps / Cloud Security roles and collaboration. Drop a message through the terminal — it lands straight in my inbox.
+                    </p>
+
+                    <div class="info-row">
+                        <span class="info-label">EMAIL</span>
+                        <a href="mailto:faizansayyad1876@gmail.com" class="info-value">faizansayyad1876@gmail.com</a>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">GITHUB</span>
+                        <a href="https://github.com/faizansayyad7" target="_blank" class="info-value">@faizansayyad7</a>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">LINKEDIN</span>
+                        <a href="https://linkedin.com/in/faizansayyad1876" target="_blank" class="info-value">in/faizansayyad1876</a>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">PHONE</span>
+                        <span class="info-value">+91 86250 11076</span>
+                    </div>
+                </div>
+
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span style="color: #ff5f56;">●</span>
+                        <span style="color: #ffbd2e;">●</span>
+                        <span style="color: #27c93f;">●</span>
+                        <span style="margin-left: 10px;">new_message.sh</span>
+                    </div>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label>&gt; NAME</label>
+                            <input type="text" class="form-control" placeholder="your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>&gt; EMAIL</label>
+                            <input type="email" class="form-control" placeholder="you@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>&gt; MESSAGE</label>
+                            <textarea class="form-control" placeholder="type your transmission..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-solid" style="width: 100%;">SEND TRANSMISSION &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================================
+     END CONTACT SECTION
+========================================= -->
+
+    <!-- =========================================
+     FOOTER SECTION
+========================================= -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="font-mono text-green" style="margin-bottom: 0.5rem;">FAIZAN SAYYAD</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">DevSecOps Engineer — engineering secure, automated cloud infrastructure.</p>
+                </div>
+                <div>
+                    <span class="section-tag">// NAVIGATE</span>
+                    <ul class="nav-links" style="flex-direction: column; gap: 8px;">
+                        <li><a href="#hero">About</a></li>
+                        <li><a href="#stack">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="section-tag">// CONNECT</span>
+                    <ul class="nav-links" style="flex-direction: column; gap: 8px;">
+                        <li><a href="https://github.com/faizansayyad7" target="_blank">GitHub &nearr;</a></li>
+                        <li><a href="https://linkedin.com/in/faizansayyad1876" target="_blank">LinkedIn &nearr;</a></li>
+                        <li><a href="mailto:faizansayyad1876@gmail.com">Email &nearr;</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 FAIZAN SAYYAD. ALL SYSTEMS OPERATIONAL</div>
+                <div class="text-green">● ONLINE</div>
+            </div>
+        </div>
+    </footer>
+    <!-- =========================================
+     END FOOTER SECTION
+========================================= -->
+
+</body>
+</html>

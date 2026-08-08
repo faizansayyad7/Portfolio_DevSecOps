@@ -1,0 +1,355 @@
+/* ==================================================
+   File : 11-responsive.css
+   Purpose : Responsive Design
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .dual-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    /* Navigation */
+
+    nav {
+        height: 64px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .btn-outline {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+
+    /* Hero */
+
+    #hero {
+        padding-top: 110px;
+        padding-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 13vw, 5rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-bio {
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        margin-bottom: 3rem;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 65px 0;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+
+    /* Cards */
+
+    .cards-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+
+    /* Skills */
+
+    .skill-group {
+        padding: 1.5rem;
+    }
+
+
+    /* Experience */
+
+    .dual-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .exp-item {
+        padding-left: 1.2rem;
+    }
+
+
+    /* Projects */
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .terminal-box {
+        padding: 1.5rem;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .btn-outline {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+
+    /* Hero */
+
+    .hero-title {
+        font-size: 2.7rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    /* Stats */
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 55px 0;
+    }
+
+    .section-heading {
+        font-size: 1.6rem;
+    }
+
+
+    /* Cards */
+
+    .card {
+        padding: 1.3rem;
+    }
+
+
+    /* Skills */
+
+    .skill-group {
+        padding: 1.2rem;
+    }
+
+    .badge {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+
+    /* Experience */
+
+    .exp-role {
+        font-size: 1.15rem;
+    }
+
+
+    /* Projects */
+
+    .project-card {
+        padding: 1.3rem;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+
+    /* Contact */
+
+    .terminal-box {
+        padding: 1.2rem;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 45px 0 25px;
+    }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+    }
+
+}
+/* ==================================================
+   INTERACTIVE TERMINAL RESPONSIVE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .dev-terminal {
+        margin-top: 1.5rem;
+    }
+
+    .terminal-output {
+        min-height: 220px;
+        max-height: 320px;
+    }
+
+    .terminal-input-row {
+        align-items: flex-start;
+    }
+
+    .terminal-prompt {
+        flex-shrink: 0;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .dev-terminal {
+        border-radius: 6px;
+    }
+
+    .terminal-topbar {
+        padding: 0 12px;
+    }
+
+    .terminal-title {
+        font-size: 0.68rem;
+    }
+
+    .terminal-output {
+        min-height: 200px;
+        max-height: 280px;
+        padding: 14px;
+    }
+
+    .terminal-line {
+        gap: 6px;
+    }
+
+    .terminal-input-row {
+        padding: 11px 14px;
+        gap: 6px;
+    }
+
+    .terminal-prompt {
+        font-size: 0.68rem;
+    }
+
+    .terminal-input {
+        min-width: 0;
+        font-size: 0.72rem;
+    }
+
+}

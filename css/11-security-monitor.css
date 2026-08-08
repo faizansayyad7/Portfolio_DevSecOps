@@ -1,0 +1,570 @@
+/* ==================================================
+   File : 11-security-monitor.css
+   Purpose : Security Threat Monitor
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   SECURITY MONITOR
+   ================================================== */
+
+.security-monitor {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 1.5rem auto 0;
+
+    padding: 1.4rem;
+
+    background: rgba(2, 7, 3, 0.88);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 102, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-monitor:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   SECURITY HEADER
+   ================================================== */
+
+.security-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.security-label {
+    display: block;
+
+    font-family: var(--font-mono);
+
+    color: var(--text-muted);
+
+    font-size: 0.78rem;
+
+    letter-spacing: 1px;
+}
+
+.security-subtitle {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: var(--font-mono);
+
+    color: rgba(107, 142, 107, 0.7);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   PROTECTED STATUS
+   ================================================== */
+
+.security-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: var(--font-mono);
+
+    color: var(--accent-green);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.5px;
+}
+
+.security-status-dot {
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--accent-green);
+
+    animation:
+        securityPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes securityPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px var(--accent-green);
+    }
+
+    50% {
+        opacity: 0.45;
+
+        box-shadow:
+            0 0 3px var(--accent-green);
+    }
+
+}
+
+
+/* ==================================================
+   SECURITY GRID
+   ================================================== */
+
+.security-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(180px, 1fr));
+
+    gap: 12px;
+}
+
+
+/* ==================================================
+   SECURITY ITEM
+   ================================================== */
+
+.security-item {
+    position: relative;
+
+    min-height: 105px;
+
+    padding: 13px;
+
+    background: rgba(0, 255, 102, 0.025);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-item:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(0, 255, 102, 0.35);
+
+    background: rgba(0, 255, 102, 0.055);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35),
+        0 0 15px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   SECURITY ITEM TOP
+   ================================================== */
+
+.security-item-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+
+/* ==================================================
+   SECURITY ICON / NUMBER
+   ================================================== */
+
+.security-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 255, 102, 0.25);
+
+    border-radius: 50%;
+
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.58rem;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.security-item:hover .security-icon {
+    background: rgba(0, 255, 102, 0.1);
+
+    box-shadow:
+        0 0 12px rgba(0, 255, 102, 0.2);
+}
+
+
+/* ==================================================
+   SECURITY CHECK
+   ================================================== */
+
+.security-check {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.75rem;
+
+    border: 1px solid rgba(0, 255, 102, 0.18);
+
+    border-radius: 50%;
+
+    background: rgba(0, 255, 102, 0.035);
+}
+
+
+/* ==================================================
+   SECURITY NAME
+   ================================================== */
+
+.security-name {
+    color: var(--text-main);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ==================================================
+   SECURITY VALUE
+   ================================================== */
+
+.security-value {
+    margin-top: 5px;
+
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.5px;
+}
+
+.security-value::before {
+    content: "●";
+
+    margin-right: 5px;
+
+    font-size: 0.42rem;
+}
+
+
+/* ==================================================
+   SUBTLE SCAN EFFECT
+   ================================================== */
+
+.security-item::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 45%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 102, 0.06),
+        transparent
+    );
+
+    pointer-events: none;
+
+    animation:
+        securityScan 4s linear infinite;
+}
+
+@keyframes securityScan {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .security-monitor {
+        max-width: 100%;
+    }
+
+    .security-grid {
+        grid-template-columns:
+            repeat(2, minmax(180px, 1fr));
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .security-monitor {
+        padding: 1rem;
+
+        border-radius: 6px;
+    }
+
+    .security-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .security-label {
+        font-size: 0.7rem;
+    }
+
+    .security-subtitle {
+        font-size: 0.52rem;
+    }
+
+    .security-status {
+        font-size: 0.6rem;
+    }
+
+    .security-grid {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .security-item {
+        min-height: 95px;
+
+        padding: 11px;
+    }
+
+}
+
+/* ==================================================
+   LIVE SECURITY METRICS
+   ================================================== */
+
+.security-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.security-metric {
+    padding: 14px;
+
+    background: rgba(0, 255, 102, 0.025);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.metric-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.7px;
+}
+
+.metric-value {
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 102, 0.25);
+}
+
+.metric-unit {
+    margin-left: 4px;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+}
+
+
+/* ==================================================
+   SECURITY SCORE
+   ================================================== */
+
+.security-score {
+    position: relative;
+
+    height: 5px;
+
+    margin-top: 9px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.security-score-bar {
+    width: 0%;
+    height: 100%;
+
+    background: var(--accent-green);
+
+    border-radius: inherit;
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 102, 0.45);
+
+    transition: width 0.8s ease;
+}
+
+
+/* ==================================================
+   LIVE INDICATOR
+   ================================================== */
+
+.live-indicator {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 7px;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+}
+
+.live-indicator::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px var(--accent-green);
+
+    animation: liveBlink 1s infinite;
+}
+
+@keyframes liveBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .security-metrics {
+        grid-template-columns: 1fr;
+    }
+
+}
