@@ -14,10 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     initNavigation();
     initTerminal();
     initSmoothScroll();
+
     initSecurityMonitor();
     initSecurityActivity();
 
 
+    initDeploymentConsole();
+    
 });
 
 /* ==================================================
@@ -591,5 +594,82 @@ function initSecurityActivity() {
         addEvent();
 
     }, 3000);
+
+}
+
+/* ==================================================
+   DEPLOYMENT CONSOLE
+   ================================================== */
+
+function initDeploymentConsole() {
+
+    const progressBar =
+        document.querySelector("#deployment-progress-bar");
+
+    const progressValue =
+        document.querySelector("#deployment-progress-value");
+
+    const buildNumber =
+        document.querySelector("#deployment-build");
+
+    if (!progressBar || !progressValue || !buildNumber) {
+        return;
+    }
+
+
+    /* ----------------------------------------------
+       BUILD NUMBER
+       ---------------------------------------------- */
+
+    let build = 2026;
+
+    buildNumber.textContent = `#${build}`;
+
+
+    /* ----------------------------------------------
+       DEPLOYMENT PROGRESS
+       ---------------------------------------------- */
+
+    let progress = 0;
+
+    const deploymentTimer = setInterval(() => {
+
+        progress += Math.floor(
+            Math.random() * 8
+        ) + 3;
+
+
+        if (progress >= 100) {
+
+            progress = 100;
+
+            clearInterval(
+                deploymentTimer
+            );
+
+        }
+
+
+        progressBar.style.width =
+            `${progress}%`;
+
+        progressValue.textContent =
+            `${progress}%`;
+
+    }, 180);
+
+
+    /* ----------------------------------------------
+       BUILD UPDATE
+       ---------------------------------------------- */
+
+    setInterval(() => {
+
+        build++;
+
+        buildNumber.textContent =
+            `#${build}`;
+
+    }, 30000);
 
 }

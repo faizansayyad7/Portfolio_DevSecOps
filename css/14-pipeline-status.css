@@ -1,0 +1,497 @@
+/* ==================================================
+   File : 14-pipeline-status.css
+   Purpose : DevSecOps Pipeline Live Status
+   Author : Faizan Sayyad
+   ================================================== */
+
+
+/* ==================================================
+   PIPELINE CONTAINER
+   ================================================== */
+
+.pipeline-status {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 1.5rem auto 0;
+    padding: 1.4rem;
+
+    background: rgba(2, 7, 3, 0.88);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 102, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.pipeline-status:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 102, 0.07);
+}
+
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.pipeline-status-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pipeline-status-label {
+    display: block;
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+
+    letter-spacing: 1px;
+}
+
+.pipeline-status-subtitle {
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(107, 142, 107, 0.7);
+
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   LIVE STATUS
+   ================================================== */
+
+.pipeline-live {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--accent-green);
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+
+    letter-spacing: 0.5px;
+}
+
+.pipeline-live span {
+    width: 7px;
+    height: 7px;
+
+    display: inline-block;
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--accent-green);
+
+    animation:
+        pipelineLivePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pipelineLivePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+}
+
+
+/* ==================================================
+   PIPELINE STAGES
+   ================================================== */
+
+.pipeline-stages {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 5px 2px 15px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--border-color)
+        transparent;
+}
+
+.pipeline-stages::-webkit-scrollbar {
+    height: 4px;
+}
+
+.pipeline-stages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pipeline-stages::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   PIPELINE STAGE
+   ================================================== */
+
+.pipeline-stage {
+    position: relative;
+
+    flex: 0 0 125px;
+
+    min-height: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 12px 8px;
+
+    background: rgba(0, 255, 102, 0.025);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    font-family: var(--font-mono);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.pipeline-stage:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--accent-green);
+
+    background: rgba(0, 255, 102, 0.06);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(0, 255, 102, 0.08);
+}
+
+
+/* ==================================================
+   ACTIVE STAGE
+   ================================================== */
+
+.pipeline-stage.active {
+    border-color:
+        rgba(0, 255, 102, 0.22);
+
+    animation:
+        pipelineStageGlow 3s ease-in-out infinite;
+}
+
+@keyframes pipelineStageGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(0, 255, 102, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 14px rgba(0, 255, 102, 0.08);
+    }
+
+}
+
+
+/* ==================================================
+   STAGE NUMBER
+   ================================================== */
+
+.pipeline-stage-number {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid
+        rgba(0, 255, 102, 0.25);
+
+    border-radius: 50%;
+
+    color: var(--accent-green);
+
+    font-size: 0.58rem;
+
+    box-shadow:
+        0 0 8px rgba(0, 255, 102, 0.04);
+}
+
+
+/* ==================================================
+   STAGE NAME
+   ================================================== */
+
+.pipeline-stage-name {
+    color: var(--text-main);
+
+    font-size: 0.68rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   STAGE STATUS
+   ================================================== */
+
+.pipeline-stage-status {
+    color: var(--accent-green);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ==================================================
+   CONNECTOR
+   ================================================== */
+
+.pipeline-line {
+    position: relative;
+
+    flex: 0 0 35px;
+
+    height: 2px;
+
+    background:
+        rgba(0, 255, 102, 0.12);
+}
+
+.pipeline-line span {
+    position: absolute;
+
+    top: 50%;
+    left: -5px;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translateY(-50%);
+
+    background: var(--accent-green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px var(--accent-green);
+
+    animation:
+        pipelineDataFlow 2s linear infinite;
+}
+
+@keyframes pipelineDataFlow {
+
+    0% {
+        left: -5px;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% + 5px);
+        opacity: 0;
+    }
+
+}
+
+
+/* ==================================================
+   STAGGERED CONNECTOR ANIMATION
+   ================================================== */
+
+.pipeline-line:nth-of-type(2) span {
+    animation-delay: 0.4s;
+}
+
+.pipeline-line:nth-of-type(4) span {
+    animation-delay: 0.8s;
+}
+
+.pipeline-line:nth-of-type(6) span {
+    animation-delay: 1.2s;
+}
+
+.pipeline-line:nth-of-type(8) span {
+    animation-delay: 1.6s;
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.pipeline-footer {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border-color);
+
+    color: var(--text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.4px;
+}
+
+.pipeline-success {
+    color: var(--accent-green);
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .pipeline-status {
+        max-width: 100%;
+    }
+
+    .pipeline-stages {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .pipeline-status {
+        padding: 1rem;
+
+        border-radius: 6px;
+    }
+
+    .pipeline-status-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .pipeline-status-label {
+        font-size: 0.7rem;
+    }
+
+    .pipeline-status-subtitle {
+        font-size: 0.52rem;
+    }
+
+    .pipeline-live {
+        font-size: 0.58rem;
+    }
+
+    .pipeline-stage {
+        flex-basis: 105px;
+
+        min-height: 90px;
+    }
+
+    .pipeline-stage-number {
+        width: 26px;
+        height: 26px;
+    }
+
+    .pipeline-stage-name {
+        font-size: 0.62rem;
+    }
+
+    .pipeline-stage-status {
+        font-size: 0.48rem;
+    }
+
+    .pipeline-line {
+        flex-basis: 25px;
+    }
+
+    .pipeline-footer {
+        gap: 8px;
+
+        font-size: 0.52rem;
+    }
+
+}

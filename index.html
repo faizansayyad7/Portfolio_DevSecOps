@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="css/11-security-monitor.css">
     <link rel="stylesheet" href="css/12-security-activity.css">
     <link rel="stylesheet" href="css/13-cloud-infrastructure.css">
+    <link rel="stylesheet" href="css/14-pipeline-status.css">
+    <link rel="stylesheet" href="css/15-deployment-console.css">
 
 
     <!-- =========================================
@@ -757,6 +759,270 @@
 
         <span class="cloud-security-item">
             ✓ LOGGING
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     DEVSECOPS PIPELINE STATUS
+========================================= -->
+
+<div class="pipeline-status">
+
+    <div class="pipeline-status-header">
+
+        <div>
+            <span class="pipeline-status-label">
+                DEVSECOPS_PIPELINE
+            </span>
+
+            <span class="pipeline-status-subtitle">
+                CONTINUOUS INTEGRATION & DEPLOYMENT
+            </span>
+        </div>
+
+        <div class="pipeline-live">
+            <span></span>
+            LIVE
+        </div>
+
+    </div>
+
+
+    <div class="pipeline-stages">
+
+        <div class="pipeline-stage active">
+            <span class="pipeline-stage-number">01</span>
+
+            <span class="pipeline-stage-name">
+                CODE
+            </span>
+
+            <span class="pipeline-stage-status">
+                COMPLETE
+            </span>
+        </div>
+
+
+        <div class="pipeline-line">
+            <span></span>
+        </div>
+
+
+        <div class="pipeline-stage active">
+            <span class="pipeline-stage-number">02</span>
+
+            <span class="pipeline-stage-name">
+                BUILD
+            </span>
+
+            <span class="pipeline-stage-status">
+                COMPLETE
+            </span>
+        </div>
+
+
+        <div class="pipeline-line">
+            <span></span>
+        </div>
+
+
+        <div class="pipeline-stage active">
+            <span class="pipeline-stage-number">03</span>
+
+            <span class="pipeline-stage-name">
+                TEST
+            </span>
+
+            <span class="pipeline-stage-status">
+                PASSED
+            </span>
+        </div>
+
+
+        <div class="pipeline-line">
+            <span></span>
+        </div>
+
+
+        <div class="pipeline-stage active">
+            <span class="pipeline-stage-number">04</span>
+
+            <span class="pipeline-stage-name">
+                SECURITY
+            </span>
+
+            <span class="pipeline-stage-status">
+                VERIFIED
+            </span>
+        </div>
+
+
+        <div class="pipeline-line">
+            <span></span>
+        </div>
+
+
+        <div class="pipeline-stage active">
+            <span class="pipeline-stage-number">05</span>
+
+            <span class="pipeline-stage-name">
+                DEPLOY
+            </span>
+
+            <span class="pipeline-stage-status">
+                LIVE
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="pipeline-footer">
+
+        <span>
+            BUILD #2026
+        </span>
+
+        <span>
+            BRANCH: MAIN
+        </span>
+
+        <span class="pipeline-success">
+            ✓ ALL CHECKS PASSED
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     DEPLOYMENT CONSOLE
+========================================= -->
+
+<div class="deployment-console">
+
+    <div class="deployment-header">
+
+        <div>
+            <span class="deployment-label">
+                DEPLOYMENT_CONSOLE
+            </span>
+
+            <span class="deployment-subtitle">
+                CLOUD DEPLOYMENT STATUS
+            </span>
+        </div>
+
+        <div class="deployment-status">
+            <span class="deployment-status-dot"></span>
+            DEPLOYED
+        </div>
+
+    </div>
+
+
+    <div class="deployment-grid">
+
+        <div class="deployment-card">
+
+            <span class="deployment-card-label">
+                ENVIRONMENT
+            </span>
+
+            <span class="deployment-card-value">
+                PRODUCTION
+            </span>
+
+        </div>
+
+
+        <div class="deployment-card">
+
+            <span class="deployment-card-label">
+                BRANCH
+            </span>
+
+            <span class="deployment-card-value">
+                MAIN
+            </span>
+
+        </div>
+
+
+        <div class="deployment-card">
+
+            <span class="deployment-card-label">
+                BUILD
+            </span>
+
+            <span
+                class="deployment-card-value"
+                id="deployment-build"
+            >
+                #2026
+            </span>
+
+        </div>
+
+
+        <div class="deployment-card">
+
+            <span class="deployment-card-label">
+                STATUS
+            </span>
+
+            <span class="deployment-card-value">
+                SUCCESS
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="deployment-progress">
+
+        <div class="deployment-progress-top">
+
+            <span>
+                DEPLOYMENT_PROGRESS
+            </span>
+
+            <span
+                id="deployment-progress-value"
+            >
+                100%
+            </span>
+
+        </div>
+
+        <div class="deployment-progress-track">
+
+            <div
+                class="deployment-progress-bar"
+                id="deployment-progress-bar"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="deployment-footer">
+
+        <span>
+            REGION: GLOBAL
+        </span>
+
+        <span>
+            UPTIME: 99.9%
+        </span>
+
+        <span class="deployment-secure">
+            ✓ SECURE DEPLOYMENT
         </span>
 
     </div>
