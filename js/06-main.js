@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTerminal();
     initSmoothScroll();
     initSecurityMonitor();
+    initSecurityActivity();
 
 
 });
@@ -453,5 +454,142 @@ function initSecurityMonitor() {
             `${securityScore}%`;
 
     }, 4000);
+
+}
+
+/* ==================================================
+   LIVE SECURITY ACTIVITY
+   ================================================== */
+
+function initSecurityActivity() {
+
+    const feed = document.querySelector(
+        "#security-activity-feed"
+    );
+
+    if (!feed) {
+        return;
+    }
+
+
+    const events = [
+        {
+            message: "Firewall rule verified",
+            type: "success"
+        },
+        {
+            message: "SSL certificate validated",
+            type: "success"
+        },
+        {
+            message: "Authentication service secured",
+            type: "success"
+        },
+        {
+            message: "Vulnerability scan completed",
+            type: "success"
+        },
+        {
+            message: "Suspicious request blocked",
+            type: "warning"
+        },
+        {
+            message: "Intrusion detection monitoring",
+            type: "success"
+        },
+        {
+            message: "Docker security check passed",
+            type: "success"
+        },
+        {
+            message: "Cloud security policy verified",
+            type: "success"
+        }
+    ];
+
+
+    let eventIndex = 0;
+
+
+    function getTime() {
+
+        const now = new Date();
+
+        return now.toLocaleTimeString(
+            "en-GB",
+            {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            }
+        );
+
+    }
+
+
+    function addEvent() {
+
+        const event =
+            events[eventIndex];
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            `activity-item ${event.type}`;
+
+
+        item.innerHTML = `
+            <span class="activity-time">
+                ${getTime()}
+            </span>
+
+            <span class="activity-status">
+                ${event.type === "warning" ? "!" : "✓"}
+            </span>
+
+            <span class="activity-message">
+                ${event.message}
+            </span>
+        `;
+
+
+        feed.prepend(item);
+
+
+        /* Keep feed clean */
+
+        while (feed.children.length > 7) {
+
+            feed.removeChild(
+                feed.lastElementChild
+            );
+
+        }
+
+
+        /* Next event */
+
+        eventIndex++;
+
+        if (eventIndex >= events.length) {
+            eventIndex = 0;
+        }
+
+    }
+
+
+    /* First event */
+
+    addEvent();
+
+
+    /* New event every 3 seconds */
+
+    setInterval(() => {
+
+        addEvent();
+
+    }, 3000);
 
 }
