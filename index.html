@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="css/13-cloud-infrastructure.css">
     <link rel="stylesheet" href="css/14-pipeline-status.css">
     <link rel="stylesheet" href="css/15-deployment-console.css">
+    <link rel="stylesheet" href="css/16-command-center.css">
 
 
     <!-- =========================================
@@ -1023,6 +1024,144 @@
 
         <span class="deployment-secure">
             ✓ SECURE DEPLOYMENT
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     DEVSECOPS COMMAND CENTER
+========================================= -->
+
+<div class="command-center">
+
+    <div class="command-center-header">
+
+        <div>
+            <span class="command-center-label">
+                DEVSECOPS_COMMAND_CENTER
+            </span>
+
+            <span class="command-center-subtitle">
+                SYSTEM DIAGNOSTICS & SECURITY CONSOLE
+            </span>
+        </div>
+
+        <div class="command-center-status">
+            <span></span>
+            SYSTEM ONLINE
+        </div>
+
+    </div>
+
+
+    <div class="command-center-body">
+
+        <div class="command-buttons">
+
+            <button
+                class="command-btn active"
+                data-command="system"
+            >
+                SYSTEM
+            </button>
+
+            <button
+                class="command-btn"
+                data-command="security"
+            >
+                SECURITY
+            </button>
+
+            <button
+                class="command-btn"
+                data-command="cloud"
+            >
+                CLOUD
+            </button>
+
+            <button
+                class="command-btn"
+                data-command="deploy"
+            >
+                DEPLOY
+            </button>
+
+        </div>
+
+
+        <div class="command-output">
+
+            <div class="command-output-top">
+                <span>
+                    faizan@devsecops:~$
+                </span>
+
+                <span class="command-output-live">
+                    LIVE
+                </span>
+            </div>
+
+
+            <div
+                class="command-output-content"
+                id="command-output"
+            >
+                <div class="command-line">
+                    <span class="command-green">
+                        SYSTEM
+                    </span>
+                    <span>
+                        diagnostics initialized...
+                    </span>
+                </div>
+
+                <div class="command-line">
+                    <span class="command-green">
+                        STATUS
+                    </span>
+                    <span>
+                        operational
+                    </span>
+                </div>
+
+                <div class="command-line">
+                    <span class="command-green">
+                        ACCESS
+                    </span>
+                    <span>
+                        authorized
+                    </span>
+                </div>
+
+                <div class="command-line">
+                    <span class="command-green">
+                        SECURITY
+                    </span>
+                    <span>
+                        monitoring active
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="command-center-footer">
+
+        <span>
+            COMMAND CENTER
+        </span>
+
+        <span>
+            SECURE SESSION
+        </span>
+
+        <span class="command-footer-green">
+            ✓ READY
         </span>
 
     </div>

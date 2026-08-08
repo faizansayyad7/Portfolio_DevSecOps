@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     initDeploymentConsole();
-    
+    initCommandCenter();
+
 });
 
 /* ==================================================
@@ -671,5 +672,144 @@ function initDeploymentConsole() {
             `#${build}`;
 
     }, 30000);
+
+}
+
+/* ==================================================
+   DEVSECOPS COMMAND CENTER
+   ================================================== */
+
+function initCommandCenter() {
+
+    const buttons =
+        document.querySelectorAll(".command-btn");
+
+    const output =
+        document.querySelector("#command-output");
+
+    if (!buttons.length || !output) {
+        return;
+    }
+
+
+    const commandData = {
+
+        system: [
+            ["SYSTEM", "DevSecOps portfolio online"],
+            ["OS", "Linux environment detected"],
+            ["RUNTIME", "JavaScript active"],
+            ["STATUS", "All systems operational"],
+            ["ACCESS", "Authorized"]
+        ],
+
+        security: [
+            ["SECURITY", "Security monitoring active"],
+            ["FIREWALL", "Protection enabled"],
+            ["TLS", "Encrypted connection"],
+            ["AUTH", "Authentication verified"],
+            ["STATUS", "No active threats detected"]
+        ],
+
+        cloud: [
+            ["CLOUD", "Cloud infrastructure online"],
+            ["PROVIDER", "AWS-ready architecture"],
+            ["CONTAINER", "Docker environment ready"],
+            ["ORCHESTRATION", "Kubernetes-ready"],
+            ["STATUS", "Cloud services operational"]
+        ],
+
+        deploy: [
+            ["DEPLOY", "Deployment pipeline active"],
+            ["BRANCH", "main"],
+            ["BUILD", "Production build verified"],
+            ["PIPELINE", "All checks passed"],
+            ["STATUS", "Deployment successful"]
+        ]
+
+    };
+
+
+    function renderCommand(command) {
+
+        const data =
+            commandData[command];
+
+        if (!data) {
+            return;
+        }
+
+
+        output.innerHTML = "";
+
+
+        data.forEach((item, index) => {
+
+            const line =
+                document.createElement("div");
+
+            line.className =
+                "command-line";
+
+
+            line.style.animationDelay =
+                `${index * 0.08}s`;
+
+
+            line.innerHTML = `
+                <span class="command-green">
+                    ${item[0]}
+                </span>
+
+                <span>
+                    ${item[1]}
+                </span>
+            `;
+
+
+            output.appendChild(line);
+
+        });
+
+    }
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            /* Remove active state */
+
+            buttons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            /* Activate clicked button */
+
+            button.classList.add("active");
+
+
+            /* Get command */
+
+            const command =
+                button.dataset.command;
+
+
+            /* Render output */
+
+            renderCommand(command);
+
+        });
+
+    });
+
+
+    /* Default command */
+
+    renderCommand("system");
 
 }
