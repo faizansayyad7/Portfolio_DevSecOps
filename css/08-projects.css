@@ -1,120 +1,325 @@
-/*==================================================
-  File : 08-contact.css
-  Purpose : Contact Section
-  Author : Faizan Sayyad
-==================================================*/
+/* ==================================================
+   File : 08-projects.css
+   Purpose : Projects / Selected Work Section
+   Author : Faizan Sayyad
+   ================================================== */
 
-/* ==========================================
-   CONTACT GRID
-========================================== */
 
-.contact-grid {
+/* ==================================================
+   PROJECT GRID
+   ================================================== */
+
+#projects .cards-3 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
 
-/* ==========================================
-   CONTACT INFORMATION
-========================================== */
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
     gap: 1.5rem;
+
+    align-items: stretch;
 }
 
-.info-row {
+
+/* ==================================================
+   PROJECT CARD
+   ================================================== */
+
+#projects .project-card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
-    gap: 4px;
-}
 
-.info-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
+    min-height: 340px;
 
-.info-value {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--accent-green);
-    text-decoration: none;
-    transition: text-shadow 0.3s;
-}
-
-.info-value:hover {
-    text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
-}
-
-/* ==========================================
-   TERMINAL CONTACT BOX
-========================================== */
-
-.terminal-box {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
     padding: 2rem;
-    transition: border-color 0.4s, box-shadow 0.4s;
-}
 
-.terminal-box:hover {
-    border-color: rgba(0, 255, 102, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 255, 102, 0.035),
+            rgba(0, 0, 0, 0.72)
+        );
 
-/* ==========================================
-   TERMINAL HEADER
-========================================== */
-
-.terminal-header {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* ==========================================
-   FORM
-========================================== */
-
-.form-group {
-    margin-bottom: 1.2rem;
-}
-
-.form-group label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-}
-
-.form-control {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
-    padding: 12px;
-    color: var(--text-main);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(8px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ==================================================
+   CARD TOP ACCENT
+   ================================================== */
+
+#projects .project-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent-green),
+            transparent
+        );
+
+    opacity: 0.45;
+
+    transition: opacity 0.35s ease;
+}
+
+
+/* ==================================================
+   CARD HOVER
+   ================================================== */
+
+#projects .project-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(0, 255, 102, 0.45);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(0, 255, 102, 0.08);
+}
+
+#projects .project-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ==================================================
+   PROJECT TOP
+   ================================================== */
+
+#projects .project-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 1.5rem;
+
+    padding-bottom: 0.9rem;
+
+    border-bottom:
+        1px solid
+        rgba(0, 255, 102, 0.08);
+
     font-family: var(--font-mono);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.08em;
+
+    color: var(--text-muted);
+}
+
+
+/* PROJECT NUMBER */
+
+#projects .project-top span:first-child {
+    color: var(--accent-green);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+/* PROJECT DURATION */
+
+#projects .project-top span:last-child {
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   PROJECT TITLE
+   ================================================== */
+
+#projects .project-title {
+    margin-bottom: 0.85rem;
+
+    color: var(--text-main);
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* ==================================================
+   PROJECT DESCRIPTION
+   ================================================== */
+
+#projects .project-desc {
+    margin-bottom: 1.5rem;
+
+    color: var(--text-muted);
+
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+   BADGES
+   ================================================== */
+
+#projects .badges {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.55rem;
+
+    margin-top: auto;
+}
+
+
+/* ==================================================
+   BADGE
+   ================================================== */
+
+#projects .badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 0.45rem 0.7rem;
+
+    background:
+        rgba(0, 255, 102, 0.025);
+
+    border:
+        1px solid
+        rgba(0, 255, 102, 0.22);
+
     border-radius: 4px;
-    outline: none;
-    transition: all 0.3s ease;
+
+    color: #b9d8c0;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
 }
 
-.form-control:focus {
-    border-color: var(--accent-green);
-    background: rgba(0, 255, 102, 0.02);
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1) inset;
+
+/* ==================================================
+   BADGE HOVER
+   ================================================== */
+
+#projects .project-card:hover .badge {
+    border-color:
+        rgba(0, 255, 102, 0.32);
 }
 
-textarea.form-control {
-    resize: vertical;
-    min-height: 100px;
+#projects .badge:hover {
+    background:
+        rgba(0, 255, 102, 0.08);
+
+    border-color:
+        var(--accent-green);
+
+    color:
+        var(--accent-green);
+}
+
+
+/* ==================================================
+   PHISHING PROJECT ARROW
+   ================================================== */
+
+#projects .project-title {
+    transition: color 0.25s ease;
+}
+
+#projects .project-card:hover .project-title {
+    color: #f1fff4;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    #projects .cards-3 {
+        grid-template-columns: 1fr;
+    }
+
+    #projects .project-card {
+        min-height: auto;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    #projects .project-card {
+        padding: 1.4rem;
+    }
+
+    #projects .project-top {
+        margin-bottom: 1.2rem;
+    }
+
+    #projects .project-title {
+        font-size: 1.2rem;
+    }
+
+    #projects .project-desc {
+        font-size: 0.88rem;
+
+        line-height: 1.65;
+    }
+
+    #projects .badge {
+        font-size: 0.68rem;
+
+        padding: 0.4rem 0.6rem;
+    }
+
 }

@@ -467,3 +467,86 @@
     }
 
 }
+
+/* ==================================================
+   COMMAND INPUT
+   ================================================== */
+
+.command-input-row {
+    grid-column: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+    padding: 10px 12px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    font-family: var(--font-mono);
+}
+
+.command-input-prompt {
+    color: var(--accent-green);
+
+    font-size: 0.62rem;
+
+    white-space: nowrap;
+}
+
+.command-input {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    color: var(--text-main);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.65rem;
+}
+
+.command-input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.command-input:focus {
+    color: var(--accent-green);
+}
+
+
+/* ==================================================
+   COMMAND INPUT MOBILE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+    .command-input-row {
+        grid-column: 1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .command-input-row {
+        padding: 9px;
+    }
+
+    .command-input-prompt {
+        font-size: 0.52rem;
+    }
+
+    .command-input {
+        font-size: 0.56rem;
+    }
+
+}

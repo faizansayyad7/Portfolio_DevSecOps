@@ -10,12 +10,14 @@
    ================================================== */
 
 .dev-terminal {
-    width: 100%;
-    margin-top: 2rem;
+    width: min(100%, 1180px);
 
-    background: rgba(2, 7, 3, 0.92);
+    margin: 2rem auto 0;
+
+    background: rgba(2, 7, 3, 0.94);
 
     border: 1px solid var(--border-color);
+
     border-radius: 8px;
 
     overflow: hidden;
@@ -30,6 +32,11 @@
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
+
+
+/* ==================================================
+   TERMINAL HOVER
+   ================================================== */
 
 .dev-terminal:hover {
     border-color: rgba(0, 255, 102, 0.35);
@@ -48,13 +55,15 @@
     height: 42px;
 
     display: flex;
+
     align-items: center;
 
     padding: 0 16px;
 
     background: rgba(0, 0, 0, 0.55);
 
-    border-bottom: 1px solid var(--border-color);
+    border-bottom:
+        1px solid var(--border-color);
 }
 
 
@@ -64,7 +73,9 @@
 
 .terminal-dots {
     display: flex;
+
     align-items: center;
+
     gap: 7px;
 }
 
@@ -88,6 +99,7 @@
     margin-left: 18px;
 
     font-family: var(--font-mono);
+
     font-size: 0.75rem;
 
     color: var(--text-muted);
@@ -99,20 +111,23 @@
    ================================================== */
 
 .terminal-output {
-    min-height: 240px;
-    max-height: 360px;
+    height: 210px;
 
-    padding: 20px;
+    padding: 18px 20px;
 
     overflow-y: auto;
 
     font-family: var(--font-mono);
+
     font-size: 0.85rem;
 
     line-height: 1.7;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-green) transparent;
+
+    scrollbar-color:
+        var(--accent-green)
+        transparent;
 }
 
 
@@ -133,9 +148,12 @@
 
     padding: 2px 6px;
 
-    background: rgba(0, 255, 102, 0.06);
+    background:
+        rgba(0, 255, 102, 0.06);
 
-    border: 1px solid rgba(0, 255, 102, 0.15);
+    border:
+        1px solid
+        rgba(0, 255, 102, 0.15);
 
     border-radius: 3px;
 }
@@ -147,6 +165,7 @@
 
 .terminal-line {
     display: flex;
+
     align-items: flex-start;
 
     gap: 10px;
@@ -175,6 +194,7 @@
     color: var(--text-muted);
 
     font-family: var(--font-mono);
+
     font-size: 0.82rem;
 
     white-space: pre-wrap;
@@ -188,16 +208,21 @@
    ================================================== */
 
 .terminal-input-row {
+    min-height: 50px;
+
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 
-    padding: 14px 20px;
+    padding: 12px 20px;
 
-    background: rgba(0, 0, 0, 0.45);
+    background:
+        rgba(0, 0, 0, 0.45);
 
-    border-top: 1px solid var(--border-color);
+    border-top:
+        1px solid var(--border-color);
 }
 
 
@@ -213,11 +238,13 @@
     background: transparent;
 
     border: none;
+
     outline: none;
 
     color: var(--text-main);
 
     font-family: var(--font-mono);
+
     font-size: 0.85rem;
 
     caret-color: var(--accent-green);
@@ -254,30 +281,56 @@
 
 
 /* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1200px) {
+
+    .dev-terminal {
+        width: calc(100% - 32px);
+    }
+
+}
+
+
+/* ==================================================
    MOBILE
    ================================================== */
 
 @media (max-width: 600px) {
 
+    .dev-terminal {
+        width: 100%;
+
+        margin-top: 1.5rem;
+
+        border-radius: 6px;
+    }
+
     .terminal-topbar {
         height: 38px;
+
         padding: 0 12px;
     }
 
     .terminal-title {
         font-size: 0.7rem;
+
         margin-left: 12px;
     }
 
     .terminal-output {
-        min-height: 220px;
+        height: 190px;
+
         padding: 15px;
 
         font-size: 0.75rem;
     }
 
     .terminal-input-row {
-        padding: 12px 15px;
+        min-height: 46px;
+
+        padding: 11px 15px;
 
         gap: 7px;
     }

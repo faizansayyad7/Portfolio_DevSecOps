@@ -1,41 +1,120 @@
 /*==================================================
-  File : 09-footer.css
-  Purpose : Footer Section
+  File : 08-contact.css
+  Purpose : Contact Section
   Author : Faizan Sayyad
 ==================================================*/
 
 /* ==========================================
-   FOOTER
+   CONTACT GRID
 ========================================== */
 
-footer {
-    padding: 60px 0 30px;
-    background: #020502;
-    border-top: 1px solid var(--border-color);
-}
-
-/* ==========================================
-   FOOTER GRID
-========================================== */
-
-.footer-grid {
+.contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-bottom: 3rem;
 }
 
 /* ==========================================
-   FOOTER BOTTOM
+   CONTACT INFORMATION
 ========================================== */
 
-.footer-bottom {
+.contact-info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
+}
+
+.info-value {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+}
+
+.info-value:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+}
+
+/* ==========================================
+   TERMINAL CONTACT BOX
+========================================== */
+
+.terminal-box {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.terminal-box:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   TERMINAL HEADER
+========================================== */
+
+.terminal-header {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-green);
+    background: rgba(0, 255, 102, 0.02);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1) inset;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
 }

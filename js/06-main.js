@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initDeploymentConsole();
     initCommandCenter();
+    initCommandTerminal();
 
 });
 
@@ -811,5 +812,342 @@ function initCommandCenter() {
     /* Default command */
 
     renderCommand("system");
+
+}
+
+/* ==================================================
+   COMMAND CENTER TERMINAL
+   ================================================== */
+
+function initCommandTerminal() {
+
+    const input =
+        document.querySelector("#command-input");
+
+    const output =
+        document.querySelector("#command-output");
+
+    if (!input || !output) {
+        return;
+    }
+
+
+    /* ==============================================
+       COMMAND HISTORY
+    ============================================== */
+
+    let commandHistory = [];
+
+    let historyIndex = -1;
+
+
+    /* ==============================================
+       AVAILABLE COMMANDS
+    ============================================== */
+
+    const commands = {
+
+        help: [
+            ["HELP", "Available commands:"],
+            ["SYSTEM", "System diagnostics"],
+            ["SECURITY", "Security status"],
+            ["CLOUD", "Cloud infrastructure"],
+            ["DEPLOY", "Deployment status"],
+            ["CLEAR", "Clear terminal output"]
+        ],
+
+        system: [
+            ["SYSTEM", "DevSecOps portfolio online"],
+            ["OS", "Linux environment detected"],
+            ["RUNTIME", "JavaScript active"],
+            ["STATUS", "All systems operational"],
+            ["ACCESS", "Authorized"]
+        ],
+
+        security: [
+            ["SECURITY", "Security monitoring active"],
+            ["FIREWALL", "Protection enabled"],
+            ["TLS", "Encrypted connection"],
+            ["AUTH", "Authentication verified"],
+            ["STATUS", "No active threats detected"]
+        ],
+
+        cloud: [
+            ["CLOUD", "Cloud infrastructure online"],
+            ["PROVIDER", "AWS-ready architecture"],
+            ["CONTAINER", "Docker environment ready"],
+            ["ORCHESTRATION", "Kubernetes-ready"],
+            ["STATUS", "Cloud services operational"]
+        ],
+
+        deploy: [
+            ["DEPLOY", "Deployment pipeline active"],
+            ["BRANCH", "main"],
+            ["BUILD", "Production build verified"],
+            ["PIPELINE", "All checks passed"],
+            ["STATUS", "Deployment successful"]
+        ]
+
+    };
+
+
+    /* ==============================================
+       ADD TERMINAL LINE
+    ============================================== */
+
+    function addLine(label, text) {
+
+        const line =
+            document.createElement("div");
+
+        line.className =
+            "command-line";
+
+        line.innerHTML = `
+            <span class="command-green">
+                ${label}
+            </span>
+
+            <span>
+                ${text}
+            </span>
+        `;
+
+        output.appendChild(line);
+
+
+        output.scrollTop =
+            output.scrollHeight;
+    }
+
+
+    /* ==============================================
+       RUN COMMAND
+    ============================================== */
+
+    function runCommand(command) {
+
+        command =
+            command.trim().toLowerCase();
+
+
+        if (!command) {
+            return;
+        }
+
+
+        /* Show entered command */
+
+        addLine(
+            "COMMAND",
+            command
+        );
+
+
+        /* ==========================================
+           CLEAR
+        ========================================== */
+
+        if (command === "clear") {
+
+            output.innerHTML = "";
+
+            return;
+        }
+
+
+        /* ==========================================
+           UNKNOWN COMMAND
+        ========================================== */
+
+        if (!commands[command]) {
+
+            addLine(
+                "ERROR",
+                `command not found: ${command}`
+            );
+
+            addLine(
+                "HELP",
+                "Type 'help' for available commands."
+            );
+
+            return;
+        }
+
+
+        /* ==========================================
+           EXECUTE COMMAND
+        ========================================== */
+
+        commands[command].forEach(
+            ([label, text], index) => {
+
+                setTimeout(() => {
+
+                    addLine(
+                        label,
+                        text
+                    );
+
+                }, index * 80);
+
+            }
+        );
+
+    }
+
+
+    /* ==============================================
+       KEYBOARD CONTROLS
+    ============================================== */
+
+    input.addEventListener(
+        "keydown",
+        (event) => {
+
+
+            /* ======================================
+               ENTER
+            ====================================== */
+
+            if (event.key === "Enter") {
+
+                const command =
+                    input.value.trim();
+
+
+                if (!command) {
+                    return;
+                }
+
+
+                /* Save command */
+
+                commandHistory.push(
+                    command
+                );
+
+
+                /* Move history pointer
+                   to latest position */
+
+                historyIndex =
+                    commandHistory.length;
+
+
+                /* Execute */
+
+                runCommand(command);
+
+
+                /* Clear input */
+
+                input.value = "";
+
+
+                return;
+            }
+
+
+            /* ======================================
+               ARROW UP
+            ====================================== */
+
+            if (
+                event.key === "ArrowUp" &&
+                commandHistory.length > 0
+            ) {
+
+                event.preventDefault();
+
+
+                if (historyIndex > 0) {
+
+                    historyIndex--;
+
+                }
+
+
+                input.value =
+                    commandHistory[
+                        historyIndex
+                    ] || "";
+
+
+                /* Cursor at end */
+
+                requestAnimationFrame(() => {
+
+                    input.selectionStart =
+                        input.value.length;
+
+                    input.selectionEnd =
+                        input.value.length;
+
+                });
+
+            }
+
+
+            /* ======================================
+               ARROW DOWN
+            ====================================== */
+
+            if (
+                event.key === "ArrowDown" &&
+                commandHistory.length > 0
+            ) {
+
+                event.preventDefault();
+
+
+                if (
+                    historyIndex <
+                    commandHistory.length - 1
+                ) {
+
+                    historyIndex++;
+
+                    input.value =
+                        commandHistory[
+                            historyIndex
+                        ];
+
+                } else {
+
+                    historyIndex =
+                        commandHistory.length;
+
+                    input.value = "";
+
+                }
+
+            }
+
+        }
+    );
+
+
+    /* ==============================================
+       INITIAL COMMAND
+    ============================================== */
+
+    output.innerHTML = "";
+
+    addLine(
+        "SYSTEM",
+        "Command center initialized."
+    );
+
+    addLine(
+        "STATUS",
+        "Terminal ready."
+    );
+
+    addLine(
+        "HELP",
+        "Type 'help' to see available commands."
+    );
 
 }

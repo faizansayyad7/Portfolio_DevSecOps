@@ -10,8 +10,10 @@
    ================================================== */
 
 .system-status {
-    width: 100%;
-    max-width: 1050px;
+    width: min(100%, 1180px);
+    max-width: none;
+
+    box-sizing: border-box;
 
     margin: 1.5rem auto 0;
 
