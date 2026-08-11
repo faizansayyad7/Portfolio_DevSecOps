@@ -1,184 +1,1076 @@
-/*==================================================
-  File : 04-hero.css
-  Purpose : Hero Section
-  Author : Faizan Sayyad
-==================================================*/
+/* ==================================================
+   04-HERO.CSS
+   DevSecOps Portfolio Hero Section
+   Author: Faizan Sayyad
+================================================== */
 
-/* ==========================================
+
+/* ==================================================
    HERO SECTION
-========================================== */
+================================================== */
 
 #hero {
-    padding-top: 140px;
-    padding-bottom: 60px;
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: transparent;
 }
 
-/* ==========================================
+
+/* ==================================================
+   HERO CONTAINER
+================================================== */
+
+.hero-container {
+    position: relative;
+
+    min-height: calc(100vh - 125px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(420px, 0.95fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+
+/* ==================================================
+   LEFT HERO CONTENT
+================================================== */
+
+.hero-content {
+    position: relative;
+
+    z-index: 20;
+
+    max-width: 700px;
+}
+
+
+/* ==================================================
    STATUS BADGE
-========================================== */
+================================================== */
 
 .status-badge {
     display: inline-flex;
+
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid rgba(0, 255, 102, 0.25);
+
+    border-radius: 999px;
+
+    background: rgba(0, 255, 102, 0.035);
+
     color: var(--accent-green);
-    background: rgba(0, 255, 102, 0.05);
-    border: 1px solid var(--border-color);
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-    transition: 0.3s;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.03em;
+
+    box-shadow:
+        0 0 18px rgba(0, 255, 102, 0.03);
 }
 
-.status-badge:hover {
-    border-color: rgba(0, 255, 102, 0.4);
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
-}
+
+/* ==================================================
+   STATUS PULSE
+================================================== */
 
 .pulse {
-    width: 8px;
-    height: 8px;
-    background: var(--accent-green);
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
     border-radius: 50%;
-    animation: pulse 1.5s infinite;
+
+    background: var(--accent-green);
+
+    box-shadow:
+        0 0 8px rgba(0, 255, 102, 0.9);
+
+    animation: pulseGlow 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
-    }
 
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 8px rgba(0, 255, 102, 0);
-    }
+@keyframes pulseGlow {
 
+    0%,
     100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
+        opacity: 1;
+
+        transform: scale(1);
+
+        box-shadow:
+            0 0 6px rgba(0, 255, 102, 0.7);
     }
+
+    50% {
+        opacity: 0.55;
+
+        transform: scale(0.75);
+
+        box-shadow:
+            0 0 14px rgba(0, 255, 102, 1);
+    }
+
 }
 
-/* ==========================================
-   HERO CONTENT
-========================================== */
+
+/* ==================================================
+   HERO TITLE
+================================================== */
 
 .hero-title {
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 7vw, 7rem);
+
     font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -2px;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.055em;
+
+    color: var(--text-main);
 }
+
 
 .hero-title span {
     display: block;
+
     color: var(--accent-green);
-    text-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
+
+    text-shadow:
+        0 0 30px rgba(0, 255, 102, 0.08);
 }
+
+
+/* ==================================================
+   HERO SUBTITLE
+================================================== */
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    margin: 30px 0 10px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+
     font-weight: 700;
-    margin-bottom: 1.5rem;
+
+    color: var(--text-main);
 }
+
+
+/* ==================================================
+   HERO BIO
+================================================== */
 
 .hero-bio {
-    max-width: 750px;
+    max-width: 650px;
+
+    margin: 0;
+
     color: var(--text-muted);
-    font-size: 1.05rem;
-    margin-bottom: 2.5rem;
+
+    font-family: var(--font-body);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
 }
 
-/* ==========================================
-   HERO BUTTONS
-========================================== */
+
+/* ==================================================
+   HERO ACTIONS
+================================================== */
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 4rem;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
 }
 
-/* ==========================================
+
+/* ==================================================
+   HERO BUTTONS
+================================================== */
+
+.hero-actions .btn-solid,
+.hero-actions .btn-outline {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    text-decoration: none;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.78rem;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.hero-actions .btn-solid:hover,
+.hero-actions .btn-outline:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
    STATS GRID
-========================================== */
+================================================== */
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 4rem;
+
+    grid-template-columns:
+        repeat(4, minmax(100px, 1fr));
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    max-width: 650px;
 }
+
+
+/* ==================================================
+   STAT CARD
+================================================== */
 
 .stat-card {
-    background: var(--bg-card);
+    min-height: 72px;
+
+    padding: 13px 14px;
+
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 6px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    backdrop-filter: blur(5px);
+
+    background: rgba(0, 0, 0, 0.28);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
 }
 
+
 .stat-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 255, 102, 0.3);
-    box-shadow:
-        0 10px 20px rgba(0, 0, 0, 0.5),
-        0 0 15px rgba(0, 255, 102, 0.1) inset;
+    border-color: rgba(0, 255, 102, 0.35);
+
+    background:
+        rgba(0, 255, 102, 0.025);
 }
+
+
+/* ==================================================
+   STAT NUMBER
+================================================== */
 
 .stat-num {
     font-family: var(--font-mono);
-    font-size: 2.5rem;
+
+    font-size: 1.2rem;
+
     font-weight: 700;
+
     color: var(--accent-green);
-    line-height: 1;
-    margin-bottom: 0.5rem;
 }
+
+
+/* ==================================================
+   STAT LABEL
+================================================== */
 
 .stat-label {
+    margin-top: 4px;
+
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+
+    font-size: 0.68rem;
+
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* ==========================================
-   TICKER BAR
-========================================== */
 
-.ticker-bar {
-    background: rgba(0, 255, 102, 0.03);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 12px 0;
+/* ==================================================
+   RIGHT SIDE HERO VISUAL
+================================================== */
+
+.hero-visual {
+    position: relative;
+
+    width: 100%;
+
+    height: 560px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   HUD MAIN AREA
+================================================== */
+
+.hero-hud {
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    isolation: isolate;
+}
+
+
+/* ==================================================
+   HUD OUTER RING
+================================================== */
+
+.hud-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.hud-ring-outer {
+    width: 470px;
+    height: 470px;
+
+    border: 1px solid rgba(0, 255, 102, 0.30);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.05),
+        inset 0 0 25px rgba(0, 255, 102, 0.025);
+
+    animation:
+        hudRotate 22s linear infinite;
+}
+
+
+/* ==================================================
+   HUD INNER RING
+================================================== */
+
+.hud-ring-inner {
+    width: 400px;
+    height: 400px;
+
+    border: 1px dashed rgba(0, 255, 102, 0.24);
+
+    animation:
+        hudRotateReverse 30s linear infinite;
+}
+
+
+/* ==================================================
+   TECH RING
+================================================== */
+
+.hud-ring-tech {
+    width: 430px;
+    height: 430px;
+
+    border-top: 2px solid rgba(0, 255, 102, 0.55);
+
+    border-right: 1px solid transparent;
+
+    border-bottom: 1px solid rgba(0, 255, 102, 0.12);
+
+    border-left: 1px solid transparent;
+
+    animation:
+        hudRotate 15s linear infinite;
+}
+
+
+/* ==================================================
+   GREEN GLOW
+================================================== */
+
+.hud-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 390px;
+    height: 390px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 255, 102, 0.17) 0%,
+            rgba(0, 255, 102, 0.08) 35%,
+            rgba(0, 255, 102, 0.025) 62%,
+            transparent 75%
+        );
+
+    filter: blur(10px);
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   PROFILE PHOTO CIRCLE
+================================================== */
+
+.hero-photo {
+    position: relative;
+
+    width: 340px;
+    height: 340px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
     overflow: hidden;
-    white-space: nowrap;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 255, 102, 0.10),
+            rgba(0, 10, 5, 0.92) 72%
+        );
+
+    border:
+        1px solid rgba(0, 255, 102, 0.30);
+
+    box-shadow:
+        0 0 35px rgba(0, 255, 102, 0.10),
+        inset 0 0 35px rgba(0, 255, 102, 0.07);
+
+    z-index: 5;
+}
+
+
+/* ==================================================
+   PROFILE IMAGE
+================================================== */
+
+.hero-avatar {
+    position: absolute;
+
+    left: 50%;
+    bottom: -1px;
+
+    transform: translateX(-50%);
+
+    width: 350px;
+
+    max-width: none;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    z-index: 6;
+
+    filter:
+        drop-shadow(
+            0 0 14px rgba(0, 255, 102, 0.06)
+        );
+}
+
+
+/* ==================================================
+   HUD SCANNING LINE
+================================================== */
+
+.hud-scan {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 385px;
+
+    height: 1px;
+
+    transform:
+        translate(-50%, -170px);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 255, 102, 0.65),
+            transparent
+        );
+
+    opacity: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation:
+        hudScan 5s ease-in-out infinite;
+}
+
+
+/* ==================================================
+   HUD DOTS
+================================================== */
+
+.hud-dot {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--accent-green);
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 102, 0.85);
+
+    z-index: 12;
+}
+
+
+.dot-1 {
+    top: 58px;
+    right: 92px;
+}
+
+
+.dot-2 {
+    top: 215px;
+    right: 12px;
+}
+
+
+.dot-3 {
+    bottom: 72px;
+    left: 95px;
+}
+
+
+.dot-4 {
+    top: 170px;
+    left: 12px;
+}
+
+
+/* ==================================================
+   HUD LABELS
+================================================== */
+
+.hud-label {
+    position: absolute;
+
     font-family: var(--font-mono);
-    color: var(--accent-green);
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.05) inset;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(0, 255, 102, 0.70);
+
+    white-space: nowrap;
+
+    z-index: 15;
+
+    padding: 5px 8px;
+
+    border-left: 1px solid rgba(0, 255, 102, 0.4);
+
+    background:
+        rgba(0, 0, 0, 0.35);
 }
 
-.ticker-content {
-    display: inline-block;
-    animation: ticker 25s linear infinite;
+
+.hud-label-top {
+    top: 52px;
+    right: 70px;
 }
 
-@keyframes ticker {
+
+.hud-label-bottom {
+    bottom: 52px;
+    left: 70px;
+}
+
+
+/* ==================================================
+   HUD ROTATION
+================================================== */
+
+@keyframes hudRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes hudRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+/* ==================================================
+   HUD SCAN ANIMATION
+================================================== */
+
+@keyframes hudScan {
+
     0% {
-        transform: translateX(0);
+        opacity: 0;
+
+        transform:
+            translate(-50%, -170px);
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.25;
+
+        transform:
+            translate(-50%, 170px);
+    }
+
+    75% {
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(-50%);
+        opacity: 0;
+
+        transform:
+            translate(-50%, -170px);
     }
+
+}
+
+
+/* ==================================================
+   HERO TICKER
+================================================== */
+
+.ticker-bar {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid var(--border-color);
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    z-index: 20;
+}
+
+
+.ticker-content {
+    width: max-content;
+
+    padding: 11px 0;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    color: var(--text-muted);
+
+    white-space: nowrap;
+
+    animation:
+        tickerMove 25s linear infinite;
+}
+
+
+@keyframes tickerMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-30%);
+    }
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1100px) {
+
+    .hero-container {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(360px, 0.8fr);
+
+        gap: 20px;
+    }
+
+
+    .hero-title {
+        font-size: clamp(4rem, 8vw, 6rem);
+    }
+
+
+    .hero-visual {
+        height: 500px;
+    }
+
+
+    .hero-hud {
+        width: 430px;
+        height: 430px;
+    }
+
+
+    .hud-ring-outer {
+        width: 410px;
+        height: 410px;
+    }
+
+
+    .hud-ring-inner {
+        width: 350px;
+        height: 350px;
+    }
+
+
+    .hud-ring-tech {
+        width: 375px;
+        height: 375px;
+    }
+
+
+    .hud-glow {
+        width: 340px;
+        height: 340px;
+    }
+
+
+    .hero-photo {
+        width: 295px;
+        height: 295px;
+    }
+
+
+    .hero-avatar {
+        width: 330px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    #hero {
+        min-height: auto;
+    }
+
+
+    .hero-container {
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding-top: 45px;
+
+        padding-bottom: 30px;
+    }
+
+
+    .hero-content {
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    .hero-title {
+        font-size: clamp(3.6rem, 15vw, 6rem);
+    }
+
+
+    .hero-subtitle {
+        margin-top: 24px;
+
+        font-size: 1.5rem;
+    }
+
+
+    .hero-bio {
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: none;
+    }
+
+
+    .hero-visual {
+        width: 100%;
+
+        height: 390px;
+
+        margin-top: 15px;
+    }
+
+
+    .hero-hud {
+        width: 330px;
+        height: 330px;
+    }
+
+
+    .hud-ring-outer {
+        width: 320px;
+        height: 320px;
+    }
+
+
+    .hud-ring-inner {
+        width: 275px;
+        height: 275px;
+    }
+
+
+    .hud-ring-tech {
+        width: 295px;
+        height: 295px;
+    }
+
+
+    .hud-glow {
+        width: 285px;
+        height: 285px;
+    }
+
+
+    .hero-photo {
+        width: 245px;
+        height: 245px;
+    }
+
+
+    .hero-avatar {
+        width: 275px;
+    }
+
+
+    .hud-label {
+        display: none;
+    }
+
+
+    .hud-dot {
+        display: none;
+    }
+
+
+    .hud-scan {
+        width: 280px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-actions .btn-solid,
+    .hero-actions .btn-outline {
+        width: 100%;
+    }
+
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+
+    .stat-card {
+        min-height: 65px;
+
+        padding: 10px;
+    }
+
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+
+    .hero-visual {
+        height: 340px;
+    }
+
+
+    .hero-hud {
+        width: 290px;
+        height: 290px;
+    }
+
+
+    .hud-ring-outer {
+        width: 280px;
+        height: 280px;
+    }
+
+
+    .hud-ring-inner {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .hud-ring-tech {
+        width: 260px;
+        height: 260px;
+    }
+
+
+    .hud-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .hero-photo {
+        width: 215px;
+        height: 215px;
+    }
+
+
+    .hero-avatar {
+        width: 245px;
+    }
+
 }
